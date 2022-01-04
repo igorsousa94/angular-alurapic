@@ -1,19 +1,26 @@
 # Alurapic
 
-Cursos Angular - Alura
-Angular parte 1: Fundamentos
-Angular parte 2: Autenticação, Forms e lazy loading
+Cursos Angular - Alura</br>
 
-Versão do Node necessária
-v10.3.0
+Angular parte 1: Fundamentos</br>
+Angular parte 2: Autenticação, Forms e lazy loading</br>
 
-Versão do npm necessária
-6.1.0
+</br>
+</br>
 
-Versão do Angular CLI  necessária
-6.0.7
+Versões Necessárias</br>
 
-Versão do RXJS  necessária
-6.6.7
+Node v10.3.0
+</br>
 
+NPM 6.1.0
+</br>
+
+Angular CLI
+6.0.7</br>
+
+RXJS
+6.6.7</br>
+
+</br></br></br>
 Api para o projeto está disponibilizada no repositorio api-angular-photos
