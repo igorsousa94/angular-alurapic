@@ -1,4 +1,3 @@
-import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { lowerCaseValidator } from 'src/app/shared/validators/lower-case.validator';
@@ -6,9 +5,11 @@ import { NewUser } from './new-user';
 import { SignUpService } from './signup.service';
 import { Router } from '@angular/router';
 import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
+import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
 
 @Component({
   templateUrl: "./signup.component.html",
+  providers: [UserNotTakenValidatorService]
 })
 export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
