@@ -5,19 +5,16 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
-import { SignInComponent } from './home/signin/signin.component';
-import { SignUpComponent } from './home/signup/signup.component';
-import { AuthGuard } from './core/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignInComponent,
-    canActivate: [AuthGuard]
+    pathMatch: 'full',
+    redirectTo: 'home'
   },
   {
-    path: 'signup',
-    component: SignUpComponent,
+    path: 'home',
+    loadChildren: './home/home.module#HomeModule'
   },
   {
     path: 'user/:userName',
@@ -37,7 +34,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    //caso servidor suporte History API, usar sem hash
+    //RouterModule.forRoot(routes)
+
+    //caso servidor nao suporte History API, usar com hash
+    RouterModule.forRoot(routes, { useHash: true } )
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
